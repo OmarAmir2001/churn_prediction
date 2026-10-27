@@ -1,0 +1,24 @@
+[project]
+name = "churn-prediction"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "OmarAmir2001", email = "omaramir2001@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "pandas>=3.1.0",
+    "pydantic>=2.14.1",
+    "scikit-learn>=1.9.1",
+    "structlog>=26.1.0",
+]
+
+[project.scripts]
+churn-prediction = "churn_prediction:main"
+train = "churn_prediction.train:main"
+predict = "churn_prediction.predict:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
