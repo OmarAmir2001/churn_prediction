@@ -22,5 +22,3 @@ TEST_SIZE = 0.2
 RANDOM_STATE = 42
 THRESHOLD = 0.5
 C = 1.0
-
-print(f"Project root: {DATA_PATH}")
