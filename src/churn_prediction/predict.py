@@ -1,4 +1,4 @@
-import pickle
+import mlflow
 
 import structlog
 
@@ -9,11 +9,11 @@ from churn_prediction.schemas import Customer
 log = structlog.get_logger()
 
 
-def load_model(path=config.MODEL_PATH):
-    if not path.exists():
-        raise FileNotFoundError(f"Model not found at {path}. Run `uv run train` first.")
-    with open(path, "rb") as f_in:
-        return pickle.load(f_in)
+def load_model():
+    mlflow.set_tracking_uri(config.TRACKING_URI)
+    model_uri = f"models:/{config.MODEL_NAME}@{config.MODEL_ALIAS}"
+    log.info("loading_model", uri=model_uri)
+    return mlflow.sklearn.load_model(model_uri)
 
 
 def predict(model, customer: Customer) -> float:

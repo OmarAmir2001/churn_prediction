@@ -13,3 +13,7 @@ wheels/
 # Data and models (too big for git, and can be recreated)
 data/
 models/
+
+# MLflow runs and models (too big for git, and can be recreated)
+mlruns/
+mlflow.db

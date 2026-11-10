@@ -20,6 +20,7 @@ dependencies = [
 churn-prediction = "churn_prediction:main"
 train = "churn_prediction.train:main"
 predict = "churn_prediction.predict:main"
+register = "churn_prediction.register:main"
 
 [build-system]
 requires = ["uv_build>=0.12.5,<0.13.0"]
