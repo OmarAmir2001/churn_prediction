@@ -31,3 +31,8 @@ class Customer(BaseModel):
     tenure: int = Field(ge=0)
     monthlycharges: float = Field(gt=0)
     totalcharges: float = Field(ge=0)
+
+
+class Prediction(BaseModel):
+    churn_probability: float
+    churn: bool
