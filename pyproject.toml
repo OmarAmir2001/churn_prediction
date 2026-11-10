@@ -8,6 +8,8 @@ authors = [
 ]
 requires-python = ">=3.13"
 dependencies = [
+    "fastapi[standard]>=0.162.2",
+    "mlflow>=3.18.0",
     "pandas>=3.1.0",
     "pydantic>=2.14.1",
     "scikit-learn>=1.9.1",
